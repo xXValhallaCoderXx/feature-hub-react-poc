@@ -1,12 +1,14 @@
 ## Running Locally
 
 - navigate to `featurehub-local` and run `docker-compose up`
+- Go to `localhost:8085`
+- First time must enter a user name and password any of your choice to create a user
+- On top right once logged in there is a `Rocket Icon` click that and follow the steps to setup
+- Create some features
+- Start the react app
 
-
-
-admin@admin.com 
-1234567
-
+## Note 
+- User the server evaluate key - the client one will expose all feature names available via an API which you may not want
 ### Note
 - On Chrome, there is a false red flag in the network,`Refused to get unsafe header "etag"` (On Polling mode only)
 - On Firefox / Safari this is fine
