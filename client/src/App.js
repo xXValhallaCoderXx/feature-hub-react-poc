@@ -4,7 +4,7 @@ import "./App.css";
 import { useFeatureHub } from "./hooks/use-feature-hub";
 
 function App() {
-  const { btnColor } = useFeatureHub();
+  const { btnColor, featureFlag, featureConfig } = useFeatureHub();
 
   return (
     <div className="App">

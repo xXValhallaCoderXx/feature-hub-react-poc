@@ -16,3 +16,5 @@ The short answer is that you can't do anything to correct it.
 This error is browser implementation dependent and you can safely ignore it. It has to do with CORS configuration. One of the response headers is "ETag" which some browsers/versions mistakenly identify as dangerous. As far as I know there is nothing you can do to make the console error go away via your code - ETag is used to help with cache on Edge server for FeatureHub.
 
 **If you really want to get rid of it - could bypass it through a proxy**
+
+- https://github.com/featurehub-io/featurehub-javascript-sdk
