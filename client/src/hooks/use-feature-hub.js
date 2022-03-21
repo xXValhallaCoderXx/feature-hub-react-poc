@@ -24,7 +24,13 @@ const FeatureHubProvider = ({ children }) => {
       fhConfig.edgeServiceProvider(
         (repo, c) => new FeatureHubPollingClient(repo, c, 5000)
       );
-      // fhClient = await fhConfig.newContext().userKey(user).build();
+      // Showing features based on a certain user - Send some user context to feature hub so you can filter on dashboard
+      // fhClient = await fhConfig.newContext().userKey(user).build(); - User key can be like an email to help FeatureHub identify user
+      // fhClient = await fhConfig.newContext().attribute_value('user-type', 'dev').build(); or you can make custom ones like this
+
+      // Info - https://github.com/featurehub-io/featurehub-javascript-sdk#rollout-strategies-and-client-context
+
+      // BASIC
       fhClient = await fhConfig.newContext().build();
       fhConfig.addReadynessListener((readyness) => {
         if (!initialized) {
