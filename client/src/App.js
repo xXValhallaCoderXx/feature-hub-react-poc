@@ -20,6 +20,9 @@ function App() {
     (async () => {
       console.log("INIT APP");
       fhConfig = new EdgeFeatureHubConfig(fhUrl, fhAppiKey);
+      fhConfig.edgeServiceProvider(
+        (repo, c) => new FeatureHubPollingClient(repo, c, 5000)
+      );
       // fhClient = await fhConfig.newContext().userKey(user).build();
       fhClient = await fhConfig.newContext().build();
       fhConfig.addReadynessListener((readyness) => {
@@ -49,7 +52,9 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-      <button style={{padding: 5, backgroundColor: btnColor}}>Test Buitton</button>
+        <button style={{ padding: 5, backgroundColor: btnColor }}>
+          Test Buitton
+        </button>
       </header>
     </div>
   );
